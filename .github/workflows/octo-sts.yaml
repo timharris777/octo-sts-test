@@ -11,11 +11,11 @@ jobs:
     name: Test STS
     runs-on: ubuntu-latest
     steps:
-      - uses: timharris777/action@main
+      - uses: octo-sts/action@main
         id: octo-sts
         with:
           scope: timharris777/octo-sts-atlas
-          identity: foo
+          identity: octo-sts-test
 
       - env:
           GITHUB_TOKEN: ${{ steps.octo-sts.outputs.token }}
