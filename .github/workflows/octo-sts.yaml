@@ -15,7 +15,7 @@ jobs:
         id: octo-sts
         with:
           scope: timharris777/octo-sts-atlas
-          identity: octo-sts-test
+          identity: foo
 
       - env:
           GITHUB_TOKEN: ${{ steps.octo-sts.outputs.token }}
