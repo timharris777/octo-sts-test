@@ -1,0 +1,23 @@
+name: octo-sts
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write # Needed to federate tokens.
+
+jobs:
+  testSTS:
+    name: Test STS
+    runs-on: ubuntu-latest
+    steps:
+      - uses: timharris777/action@main
+        id: octo-sts
+        with:
+          scope: timharris777/octo-sts-atlas
+          identity: octo-sts-test
+
+      - env:
+          GITHUB_TOKEN: ${{ steps.octo-sts.outputs.token }}
+        run: |
+          gh repo list
