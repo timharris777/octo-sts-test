@@ -11,7 +11,7 @@ jobs:
     name: Test STS
     runs-on: ubuntu-latest
     steps:
-      - uses: octo-sts/action@main
+      - uses: timharris777/action@main
         id: octo-sts
         with:
           scope: timharris777/octo-sts-atlas
